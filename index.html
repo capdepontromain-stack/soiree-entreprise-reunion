@@ -34,7 +34,14 @@ a{color:var(--corail);text-decoration:none}
 .topbar .logo{font-family:"Bebas Neue";font-size:26px;letter-spacing:2px;color:var(--blanc)}
 .topbar .logo b{color:var(--corail)}
 .topbar nav a{color:var(--gris);font-weight:600;font-size:13.5px;margin-left:20px;letter-spacing:.3px}
-.topbar nav a.tel{color:var(--noir);background:var(--or);padding:9px 16px;border-radius:40px;font-weight:800}
+.topbar nav a.tel{color:var(--noir);background:var(--or);padding:9px 16px;border-radius:40px;font-weight:800;white-space:nowrap}
+@media(max-width:640px){
+  .topbar{padding:10px 14px;gap:8px}
+  .topbar .logo{font-size:22px}
+  .topbar nav{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;width:100%;justify-content:center}
+  .topbar nav a{margin-left:0;font-size:13px}
+  .topbar nav a.tel{padding:8px 14px}
+}
 /* hero */
 .hero{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 24px;overflow:hidden}
 .hero .bg{position:absolute;inset:0;background:url('images/mobilier-lumineux-soiree-entreprise-reunion.jpg') center/cover;filter:brightness(.42) saturate(1.1)}
