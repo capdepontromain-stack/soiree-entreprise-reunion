@@ -389,15 +389,22 @@ footer .fbig{font-family:"Bebas Neue";font-size:34px;color:var(--blanc);letter-s
 <!-- Nos derniers conseils (29/07/2026) : liens accueil → articles,
      pour que Google découvre le blog (7 pages sur 43 explorées avant ça) -->
 <section class="derniers-conseils" style="max-width:1080px;margin:0 auto;padding:48px 22px;">
+<style>
+.derniers-conseils ul{gap:12px !important}
+.derniers-conseils li{border:1px solid rgba(128,128,128,.28);border-radius:12px;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.derniers-conseils li:hover{transform:translateY(-2px);border-color:rgba(128,128,128,.6);box-shadow:0 8px 20px rgba(0,0,0,.14)}
+.derniers-conseils li a{display:block;padding:14px 16px;text-decoration:none;font-weight:600;line-height:1.5}
+.derniers-conseils li a::after{content:" \2192"}
+</style>
   <h2 style="margin:0 0 6px;">Nos derniers conseils</h2>
   <p style="opacity:.75;margin:0 0 18px;">Le blog soirée : tout pour une soirée d'entreprise réussie.</p>
   <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:6px 26px;">
-      <li style="padding:7px 0;">→ <a href="/blog/cocktail-entreprise-reunion/">Le cocktail d&#x27;entreprise à La Réunion</a></li>
-      <li style="padding:7px 0;">→ <a href="/blog/soiree-du-personnel-reunion/">La soirée du personnel à La Réunion</a></li>
-      <li style="padding:7px 0;">→ <a href="/blog/garden-party-entreprise-reunion/">La garden party d&#x27;entreprise à La Réunion</a></li>
-      <li style="padding:7px 0;">→ <a href="/blog/organiser-fete-de-la-musique-commune-reunion/">Organiser la fête de la musique dans votre ville</a></li>
-      <li style="padding:7px 0;">→ <a href="/blog/podium-concert-fete-municipale-reunion/">Podiums et concerts : les nocturnes municipales</a></li>
-      <li style="padding:7px 0;">→ <a href="/blog/team-building-puis-soiree-entreprise-reunion/">Team building le jour, soirée le soir</a></li>
+      <li><a href="/blog/cocktail-entreprise-reunion/">Le cocktail d&#x27;entreprise à La Réunion</a></li>
+      <li><a href="/blog/soiree-du-personnel-reunion/">La soirée du personnel à La Réunion</a></li>
+      <li><a href="/blog/garden-party-entreprise-reunion/">La garden party d&#x27;entreprise à La Réunion</a></li>
+      <li><a href="/blog/organiser-fete-de-la-musique-commune-reunion/">Organiser la fête de la musique dans votre ville</a></li>
+      <li><a href="/blog/podium-concert-fete-municipale-reunion/">Podiums et concerts : les nocturnes municipales</a></li>
+      <li><a href="/blog/team-building-puis-soiree-entreprise-reunion/">Team building le jour, soirée le soir</a></li>
   </ul>
   <p style="margin:18px 0 0;"><a href="/blog/"><strong>Voir tous nos articles →</strong></a></p>
 </section>
