@@ -146,7 +146,8 @@ footer .fbig{font-family:"Bebas Neue";font-size:34px;color:var(--blanc);letter-s
 </head>
 <body>
 <!-- Bandeau saisonnier (30/07/2026) : réservation anticipée fin d'année -->
-<a class="bandeau-saison" href="#devis" style="display:block;text-align:center;padding:9px 16px;font-size:14.5px;font-weight:600;line-height:1.45;text-decoration:none;background:linear-gradient(90deg,var(--violet),var(--corail));color:#fff">✨ <b style="color:var(--or)">Soirées de fin d'année 2026 :</b> les dates de novembre-décembre partent vite — bloquez la vôtre dès maintenant →</a>
+<style>.bandeau-saison .bs-court{display:none}@media(max-width:640px){.bandeau-saison .bs-long{display:none}.bandeau-saison .bs-court{display:inline}}</style>
+<a class="bandeau-saison" href="#devis" style="display:block;text-align:center;padding:9px 16px;font-size:14.5px;font-weight:600;line-height:1.45;text-decoration:none;background:linear-gradient(90deg,var(--violet),var(--corail));color:#fff">✨ <b style="color:var(--or)">Soirées de fin d'année 2026 :</b> <span class="bs-long">les dates de novembre-décembre partent vite — bloquez la vôtre dès maintenant →</span><span class="bs-court">bloquez votre date de nov-déc →</span></a>
 
 <div class="topbar">
   <a class="logo" href="/">SOIRÉE <b>974</b></a>
