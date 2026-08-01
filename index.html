@@ -791,5 +791,36 @@ document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
   }
 })();
 </script>
+<script id="21st-v4">
+(function(){
+  var calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Particules du héros — canvas léger, ordinateur seulement */
+  if (!calme && matchMedia('(pointer:fine)').matches){
+    var hero = document.querySelector('.hero');
+    if (hero){
+      var cv = document.createElement('canvas');
+      cv.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:.85';
+      hero.appendChild(cv);
+      var ctx = cv.getContext('2d'), parts = [];
+      function taille(){ cv.width = hero.offsetWidth; cv.height = hero.offsetHeight; }
+      taille(); addEventListener('resize', taille, {passive:true});
+      var teintes = ['255,209,102','255,90,77','168,85,247','245,241,234'];
+      for (var k = 0; k < 30; k++) parts.push({x:Math.random(), y:Math.random(), r:1.2+Math.random()*3, v:.0006+Math.random()*.0012, sw:Math.random()*6.28, c:teintes[k%4]});
+      (function anime(){
+        ctx.clearRect(0,0,cv.width,cv.height);
+        parts.forEach(function(p){
+          p.y -= p.v; p.sw += .02;
+          if (p.y < -0.03){ p.y = 1.03; p.x = Math.random(); }
+          ctx.globalAlpha = .3;
+          ctx.fillStyle = 'rgba(' + p.c + ',.8)';
+          ctx.beginPath(); ctx.arc((p.x + Math.sin(p.sw)*.008)*cv.width, p.y*cv.height, p.r, 0, 6.28); ctx.fill();
+        });
+        requestAnimationFrame(anime);
+      })();
+    }
+  }
+})();
+</script>
 </body>
 </html>
