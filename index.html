@@ -731,5 +731,65 @@ document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
   }
 })();
 </script>
+<style id="21st-v3">
+/* ===== INSPIRATION 21ST.DEV — DÉTAILS PRÉCIEUX ===== */
+/* reflet de verre au survol des photos (« Glass Shine Card ») */
+.gl-21{position:relative;overflow:hidden}
+.gl-21::after{content:"";position:absolute;top:0;left:-130%;width:55%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-18deg);transition:left .65s ease;pointer-events:none;z-index:2}
+.gl-21:hover::after{left:160%}
+/* halo pulsé autour du bouton devis (« Animated Glow Card ») */
+@media(prefers-reduced-motion:no-preference){
+.glow-21{animation:pulse21 3s ease-in-out infinite}
+@keyframes pulse21{0%,100%{box-shadow:0 0 16px 2px rgba(255,90,77,.35)}50%{box-shadow:0 0 32px 7px rgba(255,90,77,.6)}}
+}
+/* fin détails précieux */
+</style>
+<script id="21st-v3-js">
+(function(){
+  var calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Reflet de verre sur les visuels */
+  if (matchMedia('(pointer:fine)').matches){
+    document.querySelectorAll('figure, .card').forEach(function(el){
+      if (el.closest('.hero') || el.closest('.topbar') || el.closest('footer')) return;
+      el.classList.add('gl-21');
+    });
+  }
+
+  /* Halo pulsé sur le bouton devis */
+  var cta = document.querySelector('#btn-devis');
+  if (cta) cta.classList.add('glow-21');
+
+  /* FAQ fluide (inspiration « FAQ roller ») */
+  document.querySelectorAll('details').forEach(function(d){
+    var so = d.querySelector('summary'), co = d.querySelector('p');
+    if (!so || !co) return;
+    so.addEventListener('click', function(e){
+      if (d.open) return;
+      e.preventDefault(); d.open = true;
+      co.style.overflow = 'hidden'; co.style.maxHeight = '0'; co.style.transition = 'max-height .4s ease';
+      requestAnimationFrame(function(){ co.style.maxHeight = co.scrollHeight + 'px';
+        setTimeout(function(){ co.style.maxHeight = ''; co.style.overflow = ''; }, 450); });
+    });
+  });
+
+  /* Inclinaison 3D des cartes (inspiration « Animated 3D Card ») */
+  if (!calme && matchMedia('(pointer:fine)').matches){
+    document.querySelectorAll('.card').forEach(function(c){
+      var raf = null;
+      c.addEventListener('mousemove', function(e){
+        if (raf) return;
+        raf = requestAnimationFrame(function(){
+          var r = c.getBoundingClientRect();
+          var x = (e.clientX - r.left)/r.width - .5, y = (e.clientY - r.top)/r.height - .5;
+          c.style.transform = 'perspective(700px) rotateY(' + (x*5) + 'deg) rotateX(' + (-y*5) + 'deg) translateY(-4px)';
+          raf = null;
+        });
+      });
+      c.addEventListener('mouseleave', function(){ c.style.transform = ''; });
+    });
+  }
+})();
+</script>
 </body>
 </html>
