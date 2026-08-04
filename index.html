@@ -277,7 +277,7 @@ footer .fbig{font-family:"Bebas Neue";font-size:34px;color:var(--blanc);letter-s
   <span class="kicker">Ils nous font confiance</span>
   <h2 class="tt">Des soirées pour les <em>grands noms</em> de l'île</h2>
   <div class="logos">
-    <span>Crédit Agricole</span><span>Crédit Moderne</span><span>SAPMER</span><span>CILAM</span><span>Antenne Réunion</span><span>Canal+</span><span>Caillé Groupe</span><span>Ravate Pro</span><span>l'INSEE</span><span>Testoni</span><span>Croix-Rouge</span><span>Fondation Père Favron</span>
+    <span>Crédit Agricole</span><span>Crédit Moderne</span><span>SAPMER</span><span>CILAM</span><span>Canal+</span><span>Caillé Groupe</span><span>Ravate Pro</span><span>l'INSEE</span><span>Testoni</span><span>Croix-Rouge</span><span>Fondation Père Favron</span>
   </div>
   <div class="note-band">
     <div><div class="big">4,9/5</div><div class="stars">★★★★★</div></div>
@@ -318,7 +318,7 @@ footer .fbig{font-family:"Bebas Neue";font-size:34px;color:var(--blanc);letter-s
     <div class="card"><h3>Une agence complète, un seul interlocuteur</h3><p style="font-size:15px">Décor, mobilier lumineux, sonorisation, DJ, animateur micro, spectacles, hôtesses d'accueil, traiteur, tapis rouge : nous coordonnons tout, sans que vous ayez à jongler entre dix prestataires. Vous appelez Romain, vous validez un projet, et le jour J vous profitez de votre soirée avec vos invités. C'est le confort d'une équipe qui a déjà orchestré des centaines d'événements sur l'île.</p></div>
     <div class="card"><h3>L'animation, notre signature</h3><p style="font-size:15px">Une soirée sans âme s'oublie vite. Nos animateurs — dont DJ Ken — savent lire une salle, lancer les temps forts au bon moment, faire monter l'énergie progressivement et emmener tout le monde sur le dancefloor. Remises de trophées, discours mis en valeur, transitions travaillées : l'ambiance ne se laisse pas au hasard, elle se met en scène.</p></div>
     <div class="card"><h3>La scénographie qui transforme un lieu</h3><p style="font-size:15px">Une salle nue ou un jardin peuvent devenir un décor de rêve : mobilier lumineux, éclairage d'ambiance, tentes, tapis rouge, mise en lumière aux couleurs de votre marque. Nous créons l'atmosphère visuelle qui fait la différence entre « on a fait une fête » et « on a vécu une soirée ».</p></div>
-    <div class="card"><h3>La confiance des grands comptes</h3><p style="font-size:15px">Crédit Agricole, Crédit Moderne, SAPMER, CILAM, Antenne Réunion, Canal+, Caillé Groupe, l'INSEE… de nombreuses entreprises de l'île nous confient leurs soirées, parfois chaque année. Notre note de 4,9/5 sur Google, sur 31 avis, reflète cette relation de confiance construite sur neuf ans.</p></div>
+    <div class="card"><h3>La confiance des grands comptes</h3><p style="font-size:15px">Crédit Agricole, Crédit Moderne, SAPMER, CILAM, Canal+, Caillé Groupe, l'INSEE… de nombreuses entreprises de l'île nous confient leurs soirées, parfois chaque année. Notre note de 4,9/5 sur Google, sur 31 avis, reflète cette relation de confiance construite sur neuf ans.</p></div>
   </div>
 </div></section>
 
@@ -436,8 +436,7 @@ footer .fbig{font-family:"Bebas Neue";font-size:34px;color:var(--blanc);letter-s
 </div></section>
 
 
-<!-- Nos derniers conseils (29/07/2026) : liens accueil → articles,
-     pour que Google découvre le blog (7 pages sur 43 explorées avant ça) -->
+<!-- Nos derniers conseils (29/07/2026) : liens accueil → articles, pour que Google découvre le blog (7 pages sur 43 explorées avant ça) -->
 <section class="derniers-conseils" style="max-width:1080px;margin:0 auto;padding:48px 22px;">
 <style>
 .derniers-conseils ul{gap:12px !important}
@@ -497,10 +496,7 @@ footer .fbig{font-family:"Bebas Neue";font-size:34px;color:var(--blanc);letter-s
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","itemListElement":[{"@type":"VideoObject","name":"Soirée d'entreprise à La Réunion — Pull Up Événements","thumbnailUrl":"https://i.ytimg.com/vi/T6K8NUw0PT4/hqdefault.jpg","uploadDate":"2024-01-01","contentUrl":"https://www.youtube.com/watch?v=T6K8NUw0PT4","description":"Ambiance d'une soirée d'entreprise organisée par Pull Up Événements à La Réunion."},{"@type":"VideoObject","name":"Gala et soirée d'entreprise à La Réunion — Pull Up Événements","thumbnailUrl":"https://i.ytimg.com/vi/qwQO9c3kgCY/hqdefault.jpg","uploadDate":"2024-01-01","contentUrl":"https://www.youtube.com/watch?v=qwQO9c3kgCY","description":"Gala et soirée d'entreprise animés par Pull Up Événements à La Réunion."}]}</script>
 
 <script>
-document.querySelectorAll('.ytf').forEach(function(f){
-  f.addEventListener('click',function(){
-    var id=f.dataset.id;
-    f.innerHTML='<iframe src="https://www.youtube.com/embed/'+id+'?autoplay=1" title="Soirée Pull Up Événements" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+document.querySelectorAll('.ytf').forEach(function(f){ f.addEventListener('click',function(){ var id=f.dataset.id; f.innerHTML='<iframe src="https://www.youtube.com/embed/'+id+'?autoplay=1" title="Soirée Pull Up Événements" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
   });
 });
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
@@ -520,132 +516,50 @@ var SUIVI = { GA4: "", ADS: "", ADS_DEVIS: "" };
 
 /* Clé Web3Forms — une seule clé pour tous les sites Pull Up.
    Réglages et destinataire sur app.web3forms.com */
-var CLE_WEB3FORMS = "b3c46110-bfbb-43f9-82b0-d856c919590d";
+var CLE_WEB3FORMS = "b3c46110-bfbb-43f9-82b0-d856c919590d"; var SITE = "soiree974.re";
 
-var SITE = "soiree974.re";
-
-(function(){
-  var ids = [SUIVI.GA4, SUIVI.ADS].filter(Boolean);
-  if (!ids.length) return;
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = function(){ dataLayer.push(arguments); };
-  gtag('js', new Date());
-  var s = document.createElement('script');
-  s.async = true;
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ids[0];
-  document.head.appendChild(s);
-  ids.forEach(function(id){ gtag('config', id); });
-})();
-
-function pisterEvenement(nom, params){
-  if (typeof gtag !== 'function') return;
-  gtag('event', nom, params || {});
-}
-
-function pisterConversionDevis(){
-  pisterEvenement('demande_devis', { source: SITE });
-  if (typeof gtag === 'function' && SUIVI.ADS_DEVIS) {
-    gtag('event', 'conversion', { send_to: SUIVI.ADS_DEVIS });
+(function(){ var ids = [SUIVI.GA4, SUIVI.ADS].filter(Boolean); if (!ids.length) return; window.dataLayer = window.dataLayer || []; window.gtag = function(){ dataLayer.push(arguments); }; gtag('js', new Date()); var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ids[0]; document.head.appendChild(s); ids.forEach(function(id){ gtag('config', id); });
+})(); function pisterEvenement(nom, params){ if (typeof gtag !== 'function') return; gtag('event', nom, params || {});
+} function pisterConversionDevis(){ pisterEvenement('demande_devis', { source: SITE }); if (typeof gtag === 'function' && SUIVI.ADS_DEVIS) { gtag('event', 'conversion', { send_to: SUIVI.ADS_DEVIS });
   }
-}
-
-document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
-  a.addEventListener('click', function(){
-    pisterEvenement('clic_telephone', { source: SITE });
+} document.querySelectorAll('a[href^="tel:"]').forEach(function(a){ a.addEventListener('click', function(){ pisterEvenement('clic_telephone', { source: SITE });
   });
 });
 
 /* ═══════════════════════════════════════════════════════════════
    FORMULAIRE DE DEVIS — envoi direct vers la boîte Pull Up.
-   Si le réseau échoue, on bascule sur la messagerie du visiteur
-   pour ne perdre aucune demande.
+   Si le réseau échoue, on bascule sur la messagerie du visiteur pour ne perdre aucune demande.
    ═══════════════════════════════════════════════════════════════ */
-(function(){
-  var f    = document.getElementById('form-devis');
-  var btn  = document.getElementById('btn-devis');
-  var etat = document.getElementById('devis-etat');
-  if (!f) return;
-
-  function champs(){
-    return {
-      "Nom / société":     f.nom.value,
-      "Téléphone":         f.telephone.value,
-      "E-mail":            f.email.value,
-      "Nombre d'invités":  f.invites.value || "non précisé",
-      "Date envisagée":    f.date.value    || "non précisée",
-      "Lieu ou commune":   f.lieu.value    || "non précisé",
-      "Type de soirée":    f.type.value,
-      "Le projet":         f.message.value || "—" 
+(function(){ var f    = document.getElementById('form-devis'); var btn  = document.getElementById('btn-devis'); var etat = document.getElementById('devis-etat'); if (!f) return; function champs(){ return {
+      "Nom / société": f.nom.value,
+      "Téléphone": f.telephone.value,
+      "E-mail": f.email.value,
+      "Nombre d'invités": f.invites.value || "non précisé",
+      "Date envisagée": f.date.value    || "non précisée",
+      "Lieu ou commune": f.lieu.value    || "non précisé",
+      "Type de soirée": f.type.value,
+      "Le projet": f.message.value || "—" 
     };
-  }
-
-  function secoursMessagerie(){
-    var d = champs(), corps = "Bonjour,\r\n\r\nJe souhaite organiser une soirée à La Réunion.\r\n\r\n";
-    for (var k in d) corps += k + " : " + d[k] + "\r\n";
-    corps += "\r\n(Demande envoyée depuis " + SITE + ")";
-    window.location.href = "mailto:contact@pullup.re?subject="
+  } function secoursMessagerie(){ var d = champs(), corps = "Bonjour,\r\n\r\nJe souhaite organiser une soirée à La Réunion.\r\n\r\n"; for (var k in d) corps += k + " : " + d[k] + "\r\n"; corps += "\r\n(Demande envoyée depuis " + SITE + ")"; window.location.href = "mailto:contact@pullup.re?subject="
       + encodeURIComponent("Devis soirée d'entreprise — " + f.nom.value)
       + "&body=" + encodeURIComponent(corps);
-  }
-
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    btn.disabled = true;
-    var libelle = btn.textContent;
-    btn.textContent = "Envoi en cours…";
-    etat.textContent = "";
-
-    var donnees = champs();
-    donnees._subject = "Devis soirée d'entreprise — " + f.nom.value;
-    donnees["Reçu depuis"] = SITE;
-
-    function envoyerWeb3(){
-      if (!CLE_WEB3FORMS) return Promise.reject(new Error('clé absente'));
-      var corps = { access_key: CLE_WEB3FORMS, subject: donnees._subject, from_name: 'Soirée 974' };
-      for (var k in donnees) if (k.charAt(0) !== '_') corps[k] = donnees[k];
-      return fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(corps)
+  } f.addEventListener('submit', function(e){ e.preventDefault(); btn.disabled = true; var libelle = btn.textContent; btn.textContent = "Envoi en cours…"; etat.textContent = ""; var donnees = champs(); donnees._subject = "Devis soirée d'entreprise — " + f.nom.value; donnees["Reçu depuis"] = SITE; function envoyerWeb3(){ if (!CLE_WEB3FORMS) return Promise.reject(new Error('clé absente')); var corps = { access_key: CLE_WEB3FORMS, subject: donnees._subject, from_name: 'Soirée 974' }; for (var k in donnees) if (k.charAt(0) !== '_') corps[k] = donnees[k]; return fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(corps)
       })
       .then(function(r){ return r.json(); })
-      .then(function(rep){
-        if (rep && rep.success) return rep;
-        throw new Error(rep && rep.message ? rep.message : 'envoi refusé');
+      .then(function(rep){ if (rep && rep.success) return rep; throw new Error(rep && rep.message ? rep.message : 'envoi refusé');
       });
     }
 
-    /* Canal principal : le relais installé sur pullup.re, qui dépose la demande
-       dans contact@pullup.re — la boîte partagée de l'équipe. */
-    function envoyerRelais(){
-      return fetch('https://pullup.re/relais-formulaires.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(donnees)
+    /* Canal principal : le relais installé sur pullup.re, qui dépose la demande dans contact@pullup.re — la boîte partagée de l'équipe. */ function envoyerRelais(){ return fetch('https://pullup.re/relais-formulaires.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(donnees)
       })
       .then(function(r){ return r.json(); })
-      .then(function(rep){
-        if (rep && rep.success) return rep;
-        throw new Error(rep && rep.message ? rep.message : 'envoi refusé');
+      .then(function(rep){ if (rep && rep.success) return rep; throw new Error(rep && rep.message ? rep.message : 'envoi refusé');
       });
-    }
-
-    envoyerRelais()
+    } envoyerRelais()
     .catch(function(){ return envoyerWeb3(); })
-    .then(function(){
-      f.reset();
-      btn.textContent = "Demande envoyée ✓";
-      etat.style.color = "#f5f1ea";
-      etat.textContent = "Merci ! Votre demande est bien arrivée. Nous revenons vers vous sous 48 h — pour aller plus vite, appelez le 06 93 81 78 82.";
-      pisterConversionDevis();
-      if (window.puConfettis) window.puConfettis(btn);
+    .then(function(){ f.reset(); btn.textContent = "Demande envoyée ✓"; etat.style.color = "#f5f1ea"; etat.textContent = "Merci ! Votre demande est bien arrivée. Nous revenons vers vous sous 48 h — pour aller plus vite, appelez le 06 93 81 78 82."; pisterConversionDevis(); if (window.puConfettis) window.puConfettis(btn);
     })
-    .catch(function(){
-      btn.disabled = false;
-      btn.textContent = libelle;
-      etat.style.color = "#e8b54d";
-      etat.textContent = "L'envoi automatique n'a pas fonctionné — nous ouvrons votre messagerie avec la demande pré-remplie. Ou appelez le 06 93 81 78 82.";
-      secoursMessagerie();
+    .catch(function(){ btn.disabled = false; btn.textContent = libelle; etat.style.color = "#e8b54d"; etat.textContent = "L'envoi automatique n'a pas fonctionné — nous ouvrons votre messagerie avec la demande pré-remplie. Ou appelez le 06 93 81 78 82."; secoursMessagerie();
     });
   });
 })();
@@ -660,92 +574,28 @@ document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
 /* fin 21st */
 </style>
 <script id="21st-js">
-(function(){
-  var calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
+(function(){ var calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Titre : mots découpés pour l'allumage néon */
-  var h1 = document.querySelector('.hero h1');
-  if (h1 && !calme){
-    h1.setAttribute('aria-label', (h1.innerText || h1.textContent).replace(/\s+/g, ' ').trim());
-    var i = 0, dernier = null;
-    function decoupe(noeud){
-      Array.prototype.slice.call(noeud.childNodes).forEach(function(n){
-        if (n.nodeType === 3){
-          var frag = document.createDocumentFragment();
-          n.textContent.split(/(\s+)/).forEach(function(part){
-            if (!part) return;
-            if (/^\s+$/.test(part)){ frag.appendChild(document.createTextNode(part)); return; }
-            /* Ponctuation seule : on la recolle au mot précédent pour éviter
-               qu'elle parte toute seule à la ligne. */
-            if (/^[.,;:!?…»)\]]+$/.test(part) && dernier){ dernier.appendChild(document.createTextNode(part)); return; }
-            var sp = document.createElement('span');
-            sp.className = 'mot'; sp.textContent = part;
-            sp.setAttribute('aria-hidden', 'true');
-            sp.style.setProperty('--i', i++);
-            frag.appendChild(sp); dernier = sp;
-          });
-          noeud.replaceChild(frag, n);
-        } else if (n.nodeType === 1 && n.tagName !== 'BR'){
-          var fill = getComputedStyle(n).webkitTextFillColor;
-          if (fill === 'rgba(0, 0, 0, 0)' || fill === 'transparent'){
-            n.classList.add('mot');
-            n.setAttribute('aria-hidden', 'true');
-            n.style.setProperty('--i', i++); dernier = n;
-          } else {
-            decoupe(n);
+  /* Titre : mots découpés pour l'allumage néon */ var h1 = document.querySelector('.hero h1'); if (h1 && !calme){ h1.setAttribute('aria-label', (h1.innerText || h1.textContent).replace(/\s+/g, ' ').trim()); var i = 0, dernier = null; function decoupe(noeud){
+      Array.prototype.slice.call(noeud.childNodes).forEach(function(n){ if (n.nodeType === 3){ var frag = document.createDocumentFragment(); n.textContent.split(/(\s+)/).forEach(function(part){ if (!part) return; if (/^\s+$/.test(part)){ frag.appendChild(document.createTextNode(part)); return; }
+            /* Ponctuation seule : on la recolle au mot précédent pour éviter qu'elle parte toute seule à la ligne. */ if (/^[.,;:!?…»)\]]+$/.test(part) && dernier){ dernier.appendChild(document.createTextNode(part)); return; } var sp = document.createElement('span'); sp.className = 'mot'; sp.textContent = part; sp.setAttribute('aria-hidden', 'true'); sp.style.setProperty('--i', i++); frag.appendChild(sp); dernier = sp;
+          }); noeud.replaceChild(frag, n);
+        } else if (n.nodeType === 1 && n.tagName !== 'BR'){ var fill = getComputedStyle(n).webkitTextFillColor; if (fill === 'rgba(0, 0, 0, 0)' || fill === 'transparent'){ n.classList.add('mot'); n.setAttribute('aria-hidden', 'true'); n.style.setProperty('--i', i++); dernier = n;
+          } else { decoupe(n);
           }
         }
       });
-    }
-    decoupe(h1);
+    } decoupe(h1);
   }
 
-  /* Confettis de fête, aux couleurs de la nuit */
-  window.puConfettis = function(origine){
-    if (calme) return;
-    var cv = document.createElement('canvas');
-    cv.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:998';
-    cv.width = innerWidth; cv.height = innerHeight;
-    document.body.appendChild(cv);
-    var ctx = cv.getContext('2d');
-    var r = origine && origine.getBoundingClientRect ? origine.getBoundingClientRect() : null;
-    var x0 = r ? r.left + r.width/2 : innerWidth/2;
-    var y0 = r ? r.top + r.height/2 : innerHeight/3;
-    var couleurs = ['#ff5a4d','#ffd166','#a855f7','#f5f1ea'];
-    var parts = [];
-    for (var k = 0; k < 90; k++){
-      var a = Math.random()*Math.PI*2, v = 5 + Math.random()*8;
-      parts.push({x:x0, y:y0, vx:Math.cos(a)*v, vy:Math.sin(a)*v - 5,
-        w:6+Math.random()*6, h:4+Math.random()*4, rot:Math.random()*Math.PI,
-        vr:(Math.random()-.5)*.3, c:couleurs[k % couleurs.length]});
-    }
-    var t0 = null;
-    function anime(ts){
-      if (!t0) t0 = ts;
-      var fini = (ts - t0) > 2400;
-      ctx.clearRect(0, 0, cv.width, cv.height);
-      parts.forEach(function(p){
-        p.vy += .18; p.x += p.vx; p.y += p.vy; p.rot += p.vr;
-        ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot);
-        ctx.globalAlpha = Math.max(0, 1 - (ts - t0)/2400);
-        ctx.fillStyle = p.c; ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
-        ctx.restore();
-      });
-      if (fini) cv.remove(); else requestAnimationFrame(anime);
-    }
-    requestAnimationFrame(anime);
+  /* Confettis de fête, aux couleurs de la nuit */ window.puConfettis = function(origine){ if (calme) return; var cv = document.createElement('canvas'); cv.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:998'; cv.width = innerWidth; cv.height = innerHeight; document.body.appendChild(cv); var ctx = cv.getContext('2d'); var r = origine && origine.getBoundingClientRect ? origine.getBoundingClientRect() : null; var x0 = r ? r.left + r.width/2 : innerWidth/2; var y0 = r ? r.top + r.height/2 : innerHeight/3; var couleurs = ['#ff5a4d','#ffd166','#a855f7','#f5f1ea']; var parts = []; for (var k = 0; k < 90; k++){ var a = Math.random()*Math.PI*2, v = 5 + Math.random()*8; parts.push({x:x0, y:y0, vx:Math.cos(a)*v, vy:Math.sin(a)*v - 5, w:6+Math.random()*6, h:4+Math.random()*4, rot:Math.random()*Math.PI, vr:(Math.random()-.5)*.3, c:couleurs[k % couleurs.length]});
+    } var t0 = null; function anime(ts){ if (!t0) t0 = ts; var fini = (ts - t0) > 2400; ctx.clearRect(0, 0, cv.width, cv.height); parts.forEach(function(p){ p.vy += .18; p.x += p.vx; p.y += p.vy; p.rot += p.vr; ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot); ctx.globalAlpha = Math.max(0, 1 - (ts - t0)/2400); ctx.fillStyle = p.c; ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h); ctx.restore();
+      }); if (fini) cv.remove(); else requestAnimationFrame(anime);
+    } requestAnimationFrame(anime);
   };
 
-  /* Boutons aimantés */
-  if (!calme && matchMedia('(pointer:fine)').matches){
-    document.querySelectorAll('a.btn').forEach(function(b){
-      b.addEventListener('mousemove', function(e){
-        var r = b.getBoundingClientRect();
-        var dx = ((e.clientX - r.left)/r.width - .5) * 10;
-        var dy = ((e.clientY - r.top)/r.height - .5) * 8;
-        b.style.transform = 'translate(' + dx + 'px,' + (dy - 2) + 'px)';
-      });
-      b.addEventListener('mouseleave', function(){ b.style.transform = ''; });
+  /* Boutons aimantés */ if (!calme && matchMedia('(pointer:fine)').matches){ document.querySelectorAll('a.btn').forEach(function(b){ b.addEventListener('mousemove', function(e){ var r = b.getBoundingClientRect(); var dx = ((e.clientX - r.left)/r.width - .5) * 10; var dy = ((e.clientY - r.top)/r.height - .5) * 8; b.style.transform = 'translate(' + dx + 'px,' + (dy - 2) + 'px)';
+      }); b.addEventListener('mouseleave', function(){ b.style.transform = ''; });
     });
   }
 })();
@@ -765,50 +615,20 @@ document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
 /* fin pack premium */
 </style>
 <script id="21st-v2-js">
-(function(){
-  var calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
+(function(){ var calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Trait sous les titres de section */
-  var titres = [];
-  document.querySelectorAll('h2').forEach(function(h){
-    if (h.closest('footer') || h.closest('.topbar') || h.closest('.hero')) return;
-    h.classList.add('trait-21');
-    if (getComputedStyle(h).textAlign === 'center') h.classList.add('centre');
-    titres.push(h);
+  /* Trait sous les titres de section */ var titres = []; document.querySelectorAll('h2').forEach(function(h){ if (h.closest('footer') || h.closest('.topbar') || h.closest('.hero')) return; h.classList.add('trait-21'); if (getComputedStyle(h).textAlign === 'center') h.classList.add('centre'); titres.push(h);
   });
 
-  /* Masque de révélation des photos */
-  var photos = [];
-  if (!calme){
-    document.querySelectorAll('figure img').forEach(function(im){
-      if (im.closest('.hero') || im.closest('.topbar')) return;
-      im.classList.add('msq-21');
-      photos.push(im);
+  /* Masque de révélation des photos */ var photos = []; if (!calme){ document.querySelectorAll('figure img').forEach(function(im){ if (im.closest('.hero') || im.closest('.topbar')) return; im.classList.add('msq-21'); photos.push(im);
     });
-  }
-
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (!e.isIntersecting) return;
-      e.target.classList.add('vu');
-      io.unobserve(e.target);
+  } var io = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if (!e.isIntersecting) return; e.target.classList.add('vu'); io.unobserve(e.target);
     });
-  }, {rootMargin:'0px 0px -6% 0px', threshold:.05});
-  titres.concat(photos).forEach(function(el){ io.observe(el); });
+  }, {rootMargin:'0px 0px -6% 0px', threshold:.05}); titres.concat(photos).forEach(function(el){ io.observe(el); });
 
-  /* Halo lumineux qui suit la souris (inspiration « Golden Halo ») */
-  if (!calme && matchMedia('(pointer:fine)').matches){
-    var halo = document.createElement('div'); halo.id = 'halo-21';
-    document.body.appendChild(halo);
-    var hx = innerWidth/2, hy = innerHeight/3, cx = hx, cy = hy, actif = false;
-    addEventListener('mousemove', function(e){
-      cx = e.clientX; cy = e.clientY;
-      if (!actif){ actif = true; halo.classList.add('on'); }
+  /* Halo lumineux qui suit la souris (inspiration « Golden Halo ») */ if (!calme && matchMedia('(pointer:fine)').matches){ var halo = document.createElement('div'); halo.id = 'halo-21'; document.body.appendChild(halo); var hx = innerWidth/2, hy = innerHeight/3, cx = hx, cy = hy, actif = false; addEventListener('mousemove', function(e){ cx = e.clientX; cy = e.clientY; if (!actif){ actif = true; halo.classList.add('on'); }
     }, {passive:true});
-    (function suit(){
-      hx += (cx - hx) * .08; hy += (cy - hy) * .08;
-      halo.style.transform = 'translate(' + (hx - 360) + 'px,' + (hy - 360) + 'px)';
-      requestAnimationFrame(suit);
+    (function suit(){ hx += (cx - hx) * .08; hy += (cy - hy) * .08; halo.style.transform = 'translate(' + (hx - 360) + 'px,' + (hy - 360) + 'px)'; requestAnimationFrame(suit);
     })();
   }
 })();
@@ -827,78 +647,31 @@ document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
 /* fin détails précieux */
 </style>
 <script id="21st-v3-js">
-(function(){
-  var calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
+(function(){ var calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Reflet de verre sur les visuels */
-  if (matchMedia('(pointer:fine)').matches){
-    document.querySelectorAll('figure, .card').forEach(function(el){
-      if (el.closest('.hero') || el.closest('.topbar') || el.closest('footer')) return;
-      el.classList.add('gl-21');
+  /* Reflet de verre sur les visuels */ if (matchMedia('(pointer:fine)').matches){ document.querySelectorAll('figure, .card').forEach(function(el){ if (el.closest('.hero') || el.closest('.topbar') || el.closest('footer')) return; el.classList.add('gl-21');
     });
   }
 
-  /* Halo pulsé sur le bouton devis */
-  var cta = document.querySelector('#btn-devis');
-  if (cta) cta.classList.add('glow-21');
+  /* Halo pulsé sur le bouton devis */ var cta = document.querySelector('#btn-devis'); if (cta) cta.classList.add('glow-21');
 
-  /* FAQ fluide (inspiration « FAQ roller ») */
-  document.querySelectorAll('details').forEach(function(d){
-    var so = d.querySelector('summary'), co = d.querySelector('p');
-    if (!so || !co) return;
-    so.addEventListener('click', function(e){
-      if (d.open) return;
-      e.preventDefault(); d.open = true;
-      co.style.overflow = 'hidden'; co.style.maxHeight = '0'; co.style.transition = 'max-height .4s ease';
-      requestAnimationFrame(function(){ co.style.maxHeight = co.scrollHeight + 'px';
-        setTimeout(function(){ co.style.maxHeight = ''; co.style.overflow = ''; }, 450); });
+  /* FAQ fluide (inspiration « FAQ roller ») */ document.querySelectorAll('details').forEach(function(d){ var so = d.querySelector('summary'), co = d.querySelector('p'); if (!so || !co) return; so.addEventListener('click', function(e){ if (d.open) return; e.preventDefault(); d.open = true; co.style.overflow = 'hidden'; co.style.maxHeight = '0'; co.style.transition = 'max-height .4s ease'; requestAnimationFrame(function(){ co.style.maxHeight = co.scrollHeight + 'px'; setTimeout(function(){ co.style.maxHeight = ''; co.style.overflow = ''; }, 450); });
     });
   });
 
-  /* Inclinaison 3D des cartes (inspiration « Animated 3D Card ») */
-  if (!calme && matchMedia('(pointer:fine)').matches){
-    document.querySelectorAll('.card').forEach(function(c){
-      var raf = null;
-      c.addEventListener('mousemove', function(e){
-        if (raf) return;
-        raf = requestAnimationFrame(function(){
-          var r = c.getBoundingClientRect();
-          var x = (e.clientX - r.left)/r.width - .5, y = (e.clientY - r.top)/r.height - .5;
-          c.style.transform = 'perspective(700px) rotateY(' + (x*5) + 'deg) rotateX(' + (-y*5) + 'deg) translateY(-4px)';
-          raf = null;
+  /* Inclinaison 3D des cartes (inspiration « Animated 3D Card ») */ if (!calme && matchMedia('(pointer:fine)').matches){ document.querySelectorAll('.card').forEach(function(c){ var raf = null; c.addEventListener('mousemove', function(e){ if (raf) return; raf = requestAnimationFrame(function(){ var r = c.getBoundingClientRect(); var x = (e.clientX - r.left)/r.width - .5, y = (e.clientY - r.top)/r.height - .5; c.style.transform = 'perspective(700px) rotateY(' + (x*5) + 'deg) rotateX(' + (-y*5) + 'deg) translateY(-4px)'; raf = null;
         });
-      });
-      c.addEventListener('mouseleave', function(){ c.style.transform = ''; });
+      }); c.addEventListener('mouseleave', function(){ c.style.transform = ''; });
     });
   }
 })();
 </script>
 <script id="21st-v4">
-(function(){
-  var calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
+(function(){ var calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Particules du héros — canvas léger, ordinateur seulement */
-  if (!calme && matchMedia('(pointer:fine)').matches){
-    var hero = document.querySelector('.hero');
-    if (hero){
-      var cv = document.createElement('canvas');
-      cv.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:.85';
-      hero.appendChild(cv);
-      var ctx = cv.getContext('2d'), parts = [];
-      function taille(){ cv.width = hero.offsetWidth; cv.height = hero.offsetHeight; }
-      taille(); addEventListener('resize', taille, {passive:true});
-      var teintes = ['255,209,102','255,90,77','168,85,247','245,241,234'];
-      for (var k = 0; k < 30; k++) parts.push({x:Math.random(), y:Math.random(), r:1.2+Math.random()*3, v:.0006+Math.random()*.0012, sw:Math.random()*6.28, c:teintes[k%4]});
-      (function anime(){
-        ctx.clearRect(0,0,cv.width,cv.height);
-        parts.forEach(function(p){
-          p.y -= p.v; p.sw += .02;
-          if (p.y < -0.03){ p.y = 1.03; p.x = Math.random(); }
-          ctx.globalAlpha = .3;
-          ctx.fillStyle = 'rgba(' + p.c + ',.8)';
-          ctx.beginPath(); ctx.arc((p.x + Math.sin(p.sw)*.008)*cv.width, p.y*cv.height, p.r, 0, 6.28); ctx.fill();
-        });
-        requestAnimationFrame(anime);
+  /* Particules du héros — canvas léger, ordinateur seulement */ if (!calme && matchMedia('(pointer:fine)').matches){ var hero = document.querySelector('.hero'); if (hero){ var cv = document.createElement('canvas'); cv.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:.85'; hero.appendChild(cv); var ctx = cv.getContext('2d'), parts = []; function taille(){ cv.width = hero.offsetWidth; cv.height = hero.offsetHeight; } taille(); addEventListener('resize', taille, {passive:true}); var teintes = ['255,209,102','255,90,77','168,85,247','245,241,234']; for (var k = 0; k < 30; k++) parts.push({x:Math.random(), y:Math.random(), r:1.2+Math.random()*3, v:.0006+Math.random()*.0012, sw:Math.random()*6.28, c:teintes[k%4]});
+      (function anime(){ ctx.clearRect(0,0,cv.width,cv.height); parts.forEach(function(p){ p.y -= p.v; p.sw += .02; if (p.y < -0.03){ p.y = 1.03; p.x = Math.random(); } ctx.globalAlpha = .3; ctx.fillStyle = 'rgba(' + p.c + ',.8)'; ctx.beginPath(); ctx.arc((p.x + Math.sin(p.sw)*.008)*cv.width, p.y*cv.height, p.r, 0, 6.28); ctx.fill();
+        }); requestAnimationFrame(anime);
       })();
     }
   }
