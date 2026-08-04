@@ -547,7 +547,23 @@ document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
       });
     }
 
-    envoyerWeb3()
+    /* Canal principal : le relais installé sur pullup.re, qui dépose la demande
+       dans contact@pullup.re — la boîte partagée de l'équipe. */
+    function envoyerRelais(){
+      return fetch('https://pullup.re/relais-formulaires.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(donnees)
+      })
+      .then(function(r){ return r.json(); })
+      .then(function(rep){
+        if (rep && rep.success) return rep;
+        throw new Error(rep && rep.message ? rep.message : 'envoi refusé');
+      });
+    }
+
+    envoyerRelais()
+    .catch(function(){ return envoyerWeb3(); })
     .then(function(){
       f.reset();
       btn.textContent = "Demande envoyée ✓";
