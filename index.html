@@ -526,7 +526,10 @@ document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
 
 <script>
 /* ═══════════════════════════════════════════════════════════════
-   SUIVI — Google Analytics 4 + conversions Google Ads
+   SUIVI — conversions Google Ads uniquement
+   ⚠️ L'audience (visites) est maintenant gérée par /suivi.js,
+   présent sur TOUTES les pages. Ne pas remplir GA4 ici : le
+   remplir aux deux endroits compterait chaque visite deux fois.
    Remplir les 3 valeurs et le suivi démarre tout seul.
    Tant qu'elles sont vides, rien n'est chargé (aucun cookie posé).
    GA4       : Analytics > Admin > Flux de données  →  "G-XXXXXXXXXX"
@@ -698,5 +701,6 @@ var CLE_WEB3FORMS = "b3c46110-bfbb-43f9-82b0-d856c919590d"; var SITE = "soiree97
   }
 })();
 </script>
+<script src="/suivi.js" defer></script>
 </body>
 </html>
