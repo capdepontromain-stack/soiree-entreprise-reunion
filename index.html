@@ -779,6 +779,84 @@ var CLE_WEB3FORMS = "b3c46110-bfbb-43f9-82b0-d856c919590d"; var SITE = "soiree97
   }
 })();
 </script>
+<style id="rb-css">
+/* ===== INSPIRATION REACTBITS.DEV ===== */
+/* Reflet brillant qui balaie le grand titre (Shiny Text) — copie du texte en un seul bloc,
+   le reflet n'existe que DANS les lettres (jamais de découpe mot à mot avec background-clip). */
+.hero h1{position:relative}
+.hero h1 .rb-shine{position:absolute;inset:0;color:transparent;text-shadow:none;pointer-events:none;background:linear-gradient(115deg,transparent 44%,rgba(255,255,255,.9) 50%,transparent 56%) no-repeat;background-size:240% 100%;background-position:200% 0;-webkit-background-clip:text;background-clip:text;animation:rbShine 6s ease-in-out 2.2s infinite}
+.hero h1 .rb-shine .l2{color:transparent;text-shadow:none}
+@keyframes rbShine{0%{background-position:200% 0}45%,100%{background-position:-100% 0}}
+@media(prefers-reduced-motion:reduce){.hero h1 .rb-shine{display:none}}
+/* fin reactbits */
+</style>
+<script id="rb-aurora">
+/* Voile d'aurore animé dans le haut du héros (Aurora de ReactBits, recodé sans dépendance).
+   Ordinateur seulement, coupé si l'utilisateur préfère réduire les animations,
+   en pause quand le héros n'est plus à l'écran. Si WebGL manque : rien ne change. */
+(function(){
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  /* Reflet du titre : copie exacte du texte, en un seul bloc, posée par-dessus */
+  var h1 = document.querySelector('.hero h1');
+  if (h1 && !h1.querySelector('.rb-shine')){
+    var copie = document.createElement('span');
+    copie.className = 'rb-shine';
+    copie.setAttribute('aria-hidden', 'true');
+    copie.innerHTML = "Soirée d'entreprise<span class=\"l2\">à La Réunion</span>";
+    h1.appendChild(copie);
+  }
+
+  if (!matchMedia('(pointer:fine)').matches) return;
+  var hero = document.querySelector('.hero'); if (!hero) return;
+  var cv = document.createElement('canvas');
+  cv.style.cssText = 'position:absolute;left:0;top:0;width:100%;height:62%;pointer-events:none;z-index:1;mix-blend-mode:screen;opacity:.45;-webkit-mask-image:linear-gradient(180deg,#000 35%,transparent 100%);mask-image:linear-gradient(180deg,#000 35%,transparent 100%)';
+  cv.setAttribute('aria-hidden','true');
+  var gl = cv.getContext('webgl', {alpha:true, depth:false, stencil:false, antialias:false});
+  if (!gl) return;
+  var inner = hero.querySelector('.inner');
+  hero.insertBefore(cv, inner || null);
+
+  function shader(type, src){ var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)){ return null; } return s; }
+  var vs = shader(gl.VERTEX_SHADER, 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}');
+  var fs = shader(gl.FRAGMENT_SHADER,
+    'precision mediump float;uniform float uT;uniform vec2 uR;' +
+    'vec3 mod289(vec3 x){return x-floor(x*(1./289.))*289.;}' +
+    'vec2 mod289(vec2 x){return x-floor(x*(1./289.))*289.;}' +
+    'vec3 permute(vec3 x){return mod289(((x*34.)+1.)*x);}' +
+    'float snoise(vec2 v){const vec4 C=vec4(.211324865405187,.366025403784439,-.577350269189626,.024390243902439);' +
+    'vec2 i=floor(v+dot(v,C.yy));vec2 x0=v-i+dot(i,C.xx);vec2 i1=(x0.x>x0.y)?vec2(1.,0.):vec2(0.,1.);' +
+    'vec4 x12=x0.xyxy+C.xxzz;x12.xy-=i1;i=mod289(i);' +
+    'vec3 p=permute(permute(i.y+vec3(0.,i1.y,1.))+i.x+vec3(0.,i1.x,1.));' +
+    'vec3 m=max(.5-vec3(dot(x0,x0),dot(x12.xy,x12.xy),dot(x12.zw,x12.zw)),0.);m=m*m;m=m*m;' +
+    'vec3 x=2.*fract(p*C.www)-1.;vec3 h=abs(x)-.5;vec3 ox=floor(x+.5);vec3 a0=x-ox;' +
+    'm*=1.79284291400159-.85373472095314*(a0*a0+h*h);' +
+    'vec3 g;g.x=a0.x*x0.x+h.x*x0.y;g.yz=a0.yz*x12.xz+h.yz*x12.yw;return 130.*dot(m,g);}' +
+    'void main(){vec2 uv=gl_FragCoord.xy/uR;' +
+    'vec3 c1=vec3(1.,.353,.302);vec3 c2=vec3(.659,.333,.969);vec3 c3=vec3(1.,.82,.4);' +
+    'vec3 ramp=uv.x<.5?mix(c1,c2,uv.x*2.):mix(c2,c3,uv.x*2.-1.);' +
+    'float h=snoise(vec2(uv.x*2.+uT*.08,uT*.18))*.5;h=exp(h);' +
+    'float inten=.6*(uv.y*2.-h+.2);' +
+    'float a=smoothstep(-.05,.45,inten);' +
+    'vec3 col=min(inten,1.)*ramp;' +
+    'gl_FragColor=vec4(col*a,a);}');
+  if (!vs || !fs) return;
+  var pr = gl.createProgram(); gl.attachShader(pr, vs); gl.attachShader(pr, fs); gl.linkProgram(pr);
+  if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) return;
+  gl.useProgram(pr);
+  var buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 3,-1, -1,3]), gl.STATIC_DRAW);
+  var loc = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+  var uT = gl.getUniformLocation(pr, 'uT'), uR = gl.getUniformLocation(pr, 'uR');
+  function taille(){ cv.width = Math.max(1, Math.round(cv.clientWidth*.5)); cv.height = Math.max(1, Math.round(cv.clientHeight*.5)); gl.viewport(0, 0, cv.width, cv.height); gl.uniform2f(uR, cv.width, cv.height); }
+  taille(); addEventListener('resize', taille, {passive:true});
+  var visible = true, dernier = 0;
+  new IntersectionObserver(function(e){ visible = e[0].isIntersecting; }).observe(hero);
+  (function anime(ts){ requestAnimationFrame(anime); if (!visible) return; if (ts - dernier < 33) return; dernier = ts;
+    gl.uniform1f(uT, ts*.001); gl.drawArrays(gl.TRIANGLES, 0, 3);
+  })(0);
+})();
+</script>
 <script src="/suivi.js" defer></script>
 </body>
 </html>
