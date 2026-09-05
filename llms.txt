@@ -38,8 +38,8 @@ Une page dédiée par commune, avec les lieux du secteur, l'accès et les contra
 - Soirée d'entreprise à Saint-Denis (97400) : https://soiree974.re/soiree-entreprise-saint-denis/
 - Soirée d'entreprise à Saint-Paul (97460) : https://soiree974.re/soiree-entreprise-saint-paul/
 - Soirée d'entreprise à Saint-Pierre (97410) : https://soiree974.re/soiree-entreprise-saint-pierre/
-- Soirée d'entreprise au Le Tampon (97430) : https://soiree974.re/soiree-entreprise-le-tampon/
-- Soirée d'entreprise au Le Port (97420) : https://soiree974.re/soiree-entreprise-le-port/
+- Soirée d'entreprise au Tampon (97430) : https://soiree974.re/soiree-entreprise-le-tampon/
+- Soirée d'entreprise au Port (97420) : https://soiree974.re/soiree-entreprise-le-port/
 - Soirée d'entreprise à Saint-Leu (97436) : https://soiree974.re/soiree-entreprise-saint-leu/
 - Soirée d'entreprise à Saint-André (97440) : https://soiree974.re/soiree-entreprise-saint-andre/
 - Soirée d'entreprise à Saint-Louis (97450) : https://soiree974.re/soiree-entreprise-saint-louis/
