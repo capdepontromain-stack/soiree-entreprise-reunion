@@ -433,6 +433,9 @@ footer .fbig{font-family:"Bebas Neue";font-size:34px;color:var(--blanc);letter-s
       <a class="btn or" href="#form-devis">Demander un devis</a>
     </div>
     <form class="pu-form" id="form-devis">
+      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+      <input type="hidden" name="source_page" value="">
+      <input type="hidden" name="site" value="soiree974.re">
       <label for="nom">Votre nom / société</label>
       <input id="nom" name="nom" required>
       <div class="duo">
@@ -451,7 +454,7 @@ footer .fbig{font-family:"Bebas Neue";font-size:34px;color:var(--blanc);letter-s
           <input id="invites" name="invites" type="number" min="1" inputmode="numeric" placeholder="Ex : 120">
         </div>
         <div>
-          <label for="date">Date envisagée</label>
+          <label for="date">Date de l'événement</label>
           <input id="date" name="date" placeholder="Ex : 12/12/2026">
         </div>
       </div>
@@ -471,6 +474,8 @@ footer .fbig{font-family:"Bebas Neue";font-size:34px;color:var(--blanc);letter-s
           </select>
         </div>
       </div>
+      <label for="budget">Budget indicatif</label>
+      <input id="budget" name="budget" placeholder="Votre enveloppe approximative (facultatif)">
       <label for="msg">Votre projet en quelques mots</label>
       <textarea id="msg" name="message" rows="3" placeholder="DJ, animateur micro, traiteur, scénographie…"></textarea>
       <button class="btn plein" type="submit" id="btn-devis">Demander mon devis</button>
@@ -620,9 +625,9 @@ var CLE_WEB3FORMS = "b3c46110-bfbb-43f9-82b0-d856c919590d"; var SITE = "soiree97
 
 (function(){ var ids = [SUIVI.GA4, SUIVI.ADS].filter(Boolean); if (!ids.length) return; window.dataLayer = window.dataLayer || []; window.gtag = function(){ dataLayer.push(arguments); }; gtag('js', new Date()); var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ids[0]; document.head.appendChild(s); ids.forEach(function(id){ gtag('config', id); });
 })(); function pisterEvenement(nom, params){ if (typeof gtag !== 'function') return; gtag('event', nom, params || {});
-} function pisterConversionDevis(){ pisterEvenement('demande_devis', { source: SITE }); if (typeof gtag === 'function' && SUIVI.ADS_DEVIS) { gtag('event', 'conversion', { send_to: SUIVI.ADS_DEVIS });
+} function pisterConversionDevis(){ if (!window.__puDevisEnvoye) { window.__puDevisEnvoye = true; pisterEvenement('devis_envoye', { site: SITE, prestation: (function(){ try { var el = document.querySelector('#form-devis [name=\"type\"]'); return el ? el.value : ''; } catch (err) { return ''; } })(), source_page: location.pathname }); } if (typeof gtag === 'function' && SUIVI.ADS_DEVIS) { gtag('event', 'conversion', { send_to: SUIVI.ADS_DEVIS });
   }
-} document.querySelectorAll('a[href^="tel:"]').forEach(function(a){ a.addEventListener('click', function(){ pisterEvenement('clic_telephone', { source: SITE });
+} document.querySelectorAll('a[href^="tel:"]').forEach(function(a){ a.addEventListener('click', function(ev){ if (ev && ev.__puAppel) return; if (ev) ev.__puAppel = true; pisterEvenement('appel_clic', { site: SITE, page: location.pathname });
   });
 });
 
@@ -630,7 +635,7 @@ var CLE_WEB3FORMS = "b3c46110-bfbb-43f9-82b0-d856c919590d"; var SITE = "soiree97
    FORMULAIRE DE DEVIS — envoi direct vers la boîte Pull Up.
    Si le réseau échoue, on bascule sur la messagerie du visiteur pour ne perdre aucune demande.
    ═══════════════════════════════════════════════════════════════ */
-(function(){ var f    = document.getElementById('form-devis'); var btn  = document.getElementById('btn-devis'); var etat = document.getElementById('devis-etat'); if (!f) return; function champs(){ return {
+(function(){ var f    = document.getElementById('form-devis'); var btn  = document.getElementById('btn-devis'); var etat = document.getElementById('devis-etat'); if (!f) return; try { if (f.source_page) f.source_page.value = location.pathname; } catch (err) {} function champs(){ return {
       "Nom / société": f.nom.value,
       "Téléphone": f.telephone.value,
       "E-mail": f.email.value,
@@ -638,12 +643,13 @@ var CLE_WEB3FORMS = "b3c46110-bfbb-43f9-82b0-d856c919590d"; var SITE = "soiree97
       "Date envisagée": f.date.value    || "non précisée",
       "Lieu ou commune": f.lieu.value    || "non précisé",
       "Type de soirée": f.type.value,
+      "Budget indicatif": f.budget.value || "non précisé",
       "Le projet": f.message.value || "—" 
     };
   } function secoursMessagerie(){ var d = champs(), corps = "Bonjour,\r\n\r\nJe souhaite organiser une soirée à La Réunion.\r\n\r\n"; for (var k in d) corps += k + " : " + d[k] + "\r\n"; corps += "\r\n(Demande envoyée depuis " + SITE + ")"; window.location.href = "mailto:contact@pullup.re?subject="
       + encodeURIComponent("Devis soirée d'entreprise — " + f.nom.value)
       + "&body=" + encodeURIComponent(corps);
-  } f.addEventListener('submit', function(e){ e.preventDefault(); btn.disabled = true; var libelle = btn.textContent; btn.textContent = "Envoi en cours…"; etat.textContent = ""; var donnees = champs(); donnees._subject = "Devis soirée d'entreprise — " + f.nom.value; donnees["Reçu depuis"] = SITE; function envoyerWeb3(){ if (!CLE_WEB3FORMS) return Promise.reject(new Error('clé absente')); var corps = { access_key: CLE_WEB3FORMS, subject: donnees._subject, from_name: 'Soirée 974' }; for (var k in donnees) if (k.charAt(0) !== '_') corps[k] = donnees[k]; return fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(corps)
+  } f.addEventListener('submit', function(e){ e.preventDefault(); if (f.botcheck && f.botcheck.checked) { f.reset(); return; } btn.disabled = true; var libelle = btn.textContent; btn.textContent = "Envoi en cours…"; etat.textContent = ""; var donnees = champs(); donnees._subject = "Devis soirée d'entreprise — " + f.nom.value; donnees["Reçu depuis"] = SITE; donnees.source_page = (f.source_page && f.source_page.value) || location.pathname; donnees.site = "soiree974.re"; donnees.botcheck = false; function envoyerWeb3(){ if (!CLE_WEB3FORMS) return Promise.reject(new Error('clé absente')); var corps = { access_key: CLE_WEB3FORMS, subject: donnees._subject, from_name: 'Soirée 974' }; for (var k in donnees) if (k.charAt(0) !== '_') corps[k] = donnees[k]; return fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(corps)
       })
       .then(function(r){ return r.json(); })
       .then(function(rep){ if (rep && rep.success) return rep; throw new Error(rep && rep.message ? rep.message : 'envoi refusé');
@@ -657,9 +663,9 @@ var CLE_WEB3FORMS = "b3c46110-bfbb-43f9-82b0-d856c919590d"; var SITE = "soiree97
       });
     } envoyerRelais()
     .catch(function(){ return envoyerWeb3(); })
-    .then(function(){ f.reset(); btn.textContent = "Demande envoyée ✓"; etat.style.color = "#f5f1ea"; etat.textContent = "Merci ! Votre demande est bien arrivée. Nous revenons vers vous sous 24 h — pour aller plus vite, appelez le 06 93 81 78 82."; pisterConversionDevis(); if (window.puConfettis) window.puConfettis(btn);
+    .then(function(){ f.reset(); btn.textContent = "Demande envoyée ✓"; etat.style.color = "#f5f1ea"; etat.textContent = "Merci ! Votre demande est bien arrivée. Nous revenons vers vous sous 24 h. Pour aller plus vite, appelez le 06 93 81 78 82."; pisterConversionDevis(); if (window.puConfettis) window.puConfettis(btn);
     })
-    .catch(function(){ btn.disabled = false; btn.textContent = libelle; etat.style.color = "#e8b54d"; etat.textContent = "L'envoi automatique n'a pas fonctionné — nous ouvrons votre messagerie avec la demande pré-remplie. Ou appelez le 06 93 81 78 82."; secoursMessagerie();
+    .catch(function(){ btn.disabled = false; btn.textContent = libelle; etat.style.color = "#e8b54d"; etat.textContent = "L'envoi automatique n'a pas fonctionné : nous ouvrons votre messagerie avec la demande pré-remplie. Ou appelez le 06 93 81 78 82."; secoursMessagerie();
     });
   });
 })();
