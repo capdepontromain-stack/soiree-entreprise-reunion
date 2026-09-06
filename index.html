@@ -422,6 +422,30 @@ footer .fbig{font-family:"Bebas Neue";font-size:34px;color:var(--blanc);letter-s
   </div>
 </div></section>
 
+<!-- pu-preuve : cas client reel avant le formulaire (aucun cas invente) -->
+<style>
+.pu-preuve{max-width:960px;margin:36px auto;padding:0 20px}
+.pu-preuve .pu-pv-c{display:grid;grid-template-columns:320px 1fr;background:#fff;color:#1d242c;border-radius:16px;overflow:hidden;box-shadow:0 12px 36px rgba(0,0,0,.18);text-align:left}
+.pu-preuve img{width:100%;height:100%;min-height:100%;object-fit:cover;display:block}
+.pu-preuve .pu-pv-t{padding:26px 28px}
+.pu-preuve .pu-pv-k{margin:0 0 10px;font:800 11px/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:2.6px;text-transform:uppercase;color:#ff5a4d}
+.pu-preuve .pu-pv-x{margin:0;font-size:15.5px;line-height:1.65}
+.pu-preuve .pu-pv-x a{color:#ff5a4d;font-weight:700}
+.pu-preuve .pu-pv-g{margin:14px 0 0;font-size:13.5px;color:#4c565f}
+.pu-preuve .pu-pv-g a{color:#1d242c;font-weight:700}
+@media(max-width:700px){.pu-preuve{padding:0 14px}.pu-preuve .pu-pv-c{grid-template-columns:1fr}.pu-preuve img{height:190px;min-height:0}.pu-preuve .pu-pv-t{padding:20px 20px 22px}}
+</style>
+<aside class="pu-preuve">
+  <div class="pu-pv-c">
+    <img src="images/concert-live-soiree-entreprise-reunion.jpg" width="414" height="414" alt="Concert live lors d'une soirée d'entreprise organisée à La Réunion" loading="lazy">
+    <div class="pu-pv-t">
+      <p class="pu-pv-k">Du réel, pas des promesses</p>
+      <p class="pu-pv-x"><b>400 étudiants et encadrants de l&#8217;IAE</b> (Université de La Réunion) réunis au Parc du Colosse : DJ, showcase d&#8217;artiste, structures gonflables et équipe d&#8217;animation Pull Up au complet.</p>
+      <p class="pu-pv-g">Une agence notée <b>4,9/5</b> sur Google (<a href="https://g.page/r/CYZGysYZgL8iEBM" target="_blank" rel="noopener"><b class="pu-nb-avis">111 avis</b> publics</a>).</p>
+    </div>
+  </div>
+</aside>
+
 <section id="devis"><div class="wrap reveal">
   <div class="devis">
     <span class="kicker">On en parle ?</span>
@@ -864,6 +888,23 @@ var CLE_WEB3FORMS = "b3c46110-bfbb-43f9-82b0-d856c919590d"; var SITE = "soiree97
 })();
 </script>
 <script src="/suivi.js" defer></script>
+<style id="ctamob-css">
+.ctamob{display:none}
+@media(max-width:720px){
+.ctamob{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:95;box-shadow:0 -6px 24px rgba(0,0,0,.35)}
+.ctamob a{flex:1;text-align:center;padding:15px 8px;font-weight:800;text-decoration:none;font-size:15.5px}
+.ctamob .tel1{background:#ffd166;color:#0a0711}
+.ctamob .dev1{background:#ff5a4d;color:#0a0711}
+body{padding-bottom:54px}
+}
+</style>
+<script id="ctamob-js">
+(function(){
+  var cb = document.createElement('div'); cb.className='ctamob';
+  cb.innerHTML = '<a class="tel1" href="tel:+262693817882">📞 Appeler</a><a class="dev1" href="#form-devis">Devis 24 h</a>';
+  document.body.appendChild(cb);
+})();
+</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": ["Organization", "LocalBusiness"], "@id": "https://soiree974.re/#organization", "name": "Pull Up Événements", "legalName": "Pull Up Événements", "url": "https://soiree974.re/", "logo": "https://soiree974.re/favicon-192.png", "image": "https://soiree974.re/favicon-192.png", "foundingDate": "2017", "founder": {"@type": "Person", "name": "Romain Capdepont"}, "address": {"@type": "PostalAddress", "streetAddress": "6 Impasse des Sœurs Brontë", "postalCode": "97430", "addressLocality": "Le Tampon", "addressRegion": "La Réunion", "addressCountry": "FR"}, "telephone": "+262693817882", "email": "contact@pullup.re", "areaServed": "La Réunion", "priceRange": "€€", "aggregateRating": {"@type": "AggregateRating", "ratingValue": 4.9, "reviewCount": 111, "bestRating": 5}, "sameAs": ["https://pullup.re", "https://teambuilding974.re", "https://seminaire974.re", "https://arbredenoel974.re", "https://animationenfant974.re", "https://hotesse-reunion.re", "https://productionvideo974.re", "https://g.page/r/CYZGysYZgL8iEBM", "https://www.facebook.com/pullupevenements/", "https://www.instagram.com/pull_up_evenements", "https://www.tiktok.com/@pull.up.evenements", "https://www.youtube.com/@pullupevenements", "https://www.linkedin.com/company/pullup-%C3%A9v%C3%A9nements/", "https://www.pagesjaunes.fr/pros/63182047", "https://fr.mappy.com/poi/668b691bf29adc15d0b11c04", "https://www.evenementiel.info/prestataire-11-pull-evenements.html"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://soiree974.re/"}]}</script>
 </body>
