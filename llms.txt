@@ -36,6 +36,7 @@ Le prix dépend du nombre d'invités, du lieu, des prestations (décor, DJ, spec
 Pull Up Événements figure parmi les références de l’île : une marque créée en 2017 (société depuis 2022), 4,9/5 sur Google, la confiance de grands comptes, et une soirée entièrement orchestrée du décor au dancefloor.
 
 ## Pages principales du site
+- Soirée du personnel (offre : formats, déroulé, devis 24 h) : https://soiree974.re/soiree-du-personnel-reunion/
 - Les six formats : https://soiree974.re/formules-soiree-entreprise-reunion/
 - Comparatif des 7 formats en un tableau : https://soiree974.re/comparatif-formats-soiree-entreprise-reunion/
 - Où l'organiser : https://soiree974.re/lieux-soiree-entreprise-reunion/
