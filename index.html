@@ -17,7 +17,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
-<link rel="preload" as="image" href="images/mobilier-lumineux-soiree-entreprise-reunion.jpg">
+<link rel="preload" as="image" fetchpriority="high" href="images/hero-mobilier-lumineux-soiree-mobile.webp" media="(max-width:768px)">
+<link rel="preload" as="image" fetchpriority="high" href="images/hero-mobilier-lumineux-soiree.webp" media="(min-width:769px)">
 <style>
 :root{--noir:#0a0711;--nuit:#151024;--carte:#1d1633;--bord:#2c2445;--blanc:#f5f1ea;--gris:#a99fb5;--corail:#ff5a4d;--or:#ffd166;--violet:#a855f7}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -44,7 +45,7 @@ a{color:var(--corail);text-decoration:none}
 }
 /* hero */
 .hero{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 24px;overflow:hidden}
-.hero .bg{position:absolute;inset:0;background:url('images/mobilier-lumineux-soiree-entreprise-reunion.jpg') center/cover;filter:brightness(.42) saturate(1.1)}
+.hero .bg{position:absolute;inset:0;background:#151024;filter:brightness(.42) saturate(1.1);overflow:hidden}.hero .bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
 .hero .bg::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 25%,rgba(168,85,247,.28),transparent 55%),linear-gradient(180deg,rgba(10,7,17,.55),rgba(10,7,17,.92))}
 .hero .glow{position:absolute;width:520px;height:520px;border-radius:50%;filter:blur(90px);opacity:.5;z-index:0}
 .hero .glow.a{background:var(--corail);top:-120px;left:-80px;animation:float 9s ease-in-out infinite}
@@ -186,7 +187,7 @@ footer a{text-decoration:underline}
 <style>.bandeau-saison .bs-court{display:none}@media(max-width:640px){.bandeau-saison .bs-long{display:none}.bandeau-saison .bs-court{display:inline}}</style>
 <a class="bandeau-saison" href="#devis" style="display:block;text-align:center;padding:9px 16px;font-size:14.5px;font-weight:600;line-height:1.45;text-decoration:none;background:linear-gradient(90deg,var(--violet),var(--corail));color:#fff">✨ <b style="color:var(--or)">Soirées de fin d'année 2026 :</b> <span class="bs-long">les dates de novembre-décembre partent vite — bloquez la vôtre dès maintenant →</span><span class="bs-court">bloquez votre date de nov-déc →</span></a>
 
-<div class="topbar">
+<header class="topbar">
   <a class="logo" href="/">SOIRÉE <b>974</b></a>
   <nav><a href="/formules-soiree-entreprise-reunion/">Formules</a><a href="/lieux-soiree-entreprise-reunion/">Lieux</a><a href="/budget-soiree-entreprise-reunion/">Budget</a>
     <a href="#prestations">Prestations</a>
@@ -195,11 +196,11 @@ footer a{text-decoration:underline}
     <a href="/blog/">Blog</a>
     <a class="tel" href="tel:+262693817882">📞 06 93 81 78 82</a>
   </nav>
-</div>
+</header>
 
 <main>
 <header class="hero">
-  <div class="bg"></div>
+  <div class="bg"><picture><source media="(max-width:768px)" srcset="images/hero-mobilier-lumineux-soiree-mobile.webp"><img src="images/hero-mobilier-lumineux-soiree.webp" width="1134" height="660" alt="Mobilier lumineux installé pour une soirée d'entreprise à La Réunion" fetchpriority="high" decoding="async"></picture></div>
   <div class="glow a"></div><div class="glow b"></div>
   <div class="corners">
     <div class="corner tl">Depuis<b>2017</b></div>
@@ -321,7 +322,7 @@ footer a{text-decoration:underline}
   <h2 class="tt">Nos soirées en <em>vidéo</em></h2>
   <div class="vids">
     <div class="ytf" data-id="jRxnZm-sEg4"><img loading="lazy" src="https://i.ytimg.com/vi/jRxnZm-sEg4/hqdefault.jpg" alt="Soirée d'entreprise dans le V.I.Bus à La Réunion, animée par Pull Up Événements" width="480" height="360"><div class="play"><span></span></div></div>
-    <div class="ytf" data-id="T6K8NUw0PT4"><img src="https://i.ytimg.com/vi/T6K8NUw0PT4/hqdefault.jpg" alt="Vidéo d'une soirée d'entreprise à La Réunion par Pull Up Événements" width="480" height="360" fetchpriority="high" loading="eager"><div class="play"><span></span></div></div>
+    <div class="ytf" data-id="T6K8NUw0PT4"><img src="https://i.ytimg.com/vi/T6K8NUw0PT4/hqdefault.jpg" alt="Vidéo d'une soirée d'entreprise à La Réunion par Pull Up Événements" width="480" height="360" loading="lazy"><div class="play"><span></span></div></div>
     <div class="ytf" data-id="qwQO9c3kgCY"><img loading="lazy" src="https://i.ytimg.com/vi/qwQO9c3kgCY/hqdefault.jpg" alt="Ambiance de gala et soirée d'entreprise animée par Pull Up Événements à La Réunion" width="480" height="360"><div class="play"><span></span></div></div>
   </div>
 </div></section>
@@ -335,8 +336,8 @@ footer a{text-decoration:underline}
     <figure><img loading="lazy" width="760" height="1648" src="images/affiche-soiree-entreprise-1000-cocos-cilam-reunion.webp" alt="Affiche de la soirée d'entreprise du CSE CILAM au Domaine des 1000 Cocos à La Réunion"><figcaption>Soirée CSE CILAM — Domaine des 1000 Cocos</figcaption></figure>
     <figure><img loading="lazy" width="760" height="1648" src="images/affiche-soiree-entreprise-domaine-palmiers-974.webp" alt="Affiche de la soirée d'entreprise au Domaine des Palmiers à La Réunion, par Pull Up Événements"><figcaption>Soirée d'entreprise — Domaine des Palmiers</figcaption></figure>
     <figure><img loading="lazy" width="1134" height="660" src="images/mobilier-lumineux-soiree-entreprise-reunion.jpg" alt="Mobilier lumineux et scénographie d'une soirée d'entreprise à La Réunion"><figcaption>Mobilier lumineux — soirée d'entreprise</figcaption></figure>
-    <figure><img loading="lazy" width="960" height="1280" src="images/tapis-rouge-soiree-prestige-974.webp" alt="Tapis rouge d'une soirée de prestige à La Réunion"><figcaption>Tapis rouge — soirée de prestige</figcaption></figure>
-    <figure><img loading="lazy" width="1200" height="2134" src="images/musicien-live-soiree-privee-reunion.webp" alt="Musicien live lors d'une soirée privée à La Réunion"><figcaption>Musicien live — soirée privée</figcaption></figure>
+    <figure><img loading="lazy" width="800" height="1067" src="images/tapis-rouge-soiree-prestige-974-leger.webp" alt="Tapis rouge d'une soirée de prestige à La Réunion"><figcaption>Tapis rouge — soirée de prestige</figcaption></figure>
+    <figure><img loading="lazy" width="800" height="1423" src="images/musicien-live-soiree-privee-reunion-leger.webp" alt="Musicien live lors d'une soirée privée à La Réunion"><figcaption>Musicien live — soirée privée</figcaption></figure>
     <figure><img loading="lazy" width="414" height="414" src="images/spectacle-danse-soiree-entreprise-974.webp" alt="Spectacle de danse lors d'une soirée d'entreprise à La Réunion"><figcaption>Spectacle de danse</figcaption></figure>
     <figure><img loading="lazy" width="414" height="414" src="images/concert-live-soiree-entreprise-reunion.jpg" alt="Concert live lors d'une soirée d'entreprise à La Réunion"><figcaption>Concert live</figcaption></figure>
     <figure><img loading="lazy" width="414" height="414" src="images/soiree-jardin-eclairage-tentes-reunion.jpg" alt="Soirée en jardin avec éclairage et tentes à La Réunion"><figcaption>Jardin, éclairage &amp; tentes</figcaption></figure>
